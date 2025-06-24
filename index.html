@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Você decide o futuro da IA</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tecnologia e Sociedade</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
-
 <body>
-    <div class="caixa-principal">
-        <h1>Você decide o futuro da IA</h1>
-        <div class="caixa-perguntas"></div>
-        <div class="caixa-alternativas"></div>
-        <div class="caixa-resultado">
-            <p class="texto-resultado"></p>
-            <button class="novamente-btn">Jogar novamente</button>
-        </div>
-    </div>
 
-    <!-- Scripts em módulos ES6 -->
-    <script type="module" src="js/aleatorio.js"></script>
-    <script type="module" src="js/perguntas.js"></script>
-    <script type="module" src="js/script.js"></script>
+  <!-- TELA INICIAL -->
+  <div class="tela-inicial">
+    <h2>Missão: Refletir sobre a Tecnologia</h2>
+    <p>Em um mundo cada vez mais conectado, suas decisões moldarão o impacto da tecnologia na sociedade. Está pronta para começar essa jornada?</p>
+    <button class="iniciar-btn">Começar Missão</button>
+  </div>
+
+  <!-- JOGO -->
+  <main class="caixa-principal escondido">
+    <header>
+      <h1>Tecnologia e seus efeitos na sociedade</h1>
+      <button id="toggleTema">Modo Claro</button>
+    </header>
+
+    <section class="caixa-perguntas"></section>
+    <section class="caixa-alternativas"></section>
+
+    <section class="caixa-resultado">
+      <p class="texto-resultado">Responda às perguntas para refletir sobre o impacto da tecnologia na nossa vida!</p>
+    </section>
+
+    <button class="botao-reiniciar">Reiniciar</button>
+    <button class="botao-exportar">Exportar PDF</button>
+  </main>
+
+  <footer>
+    <p>Desenvolvido por Renata - 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
