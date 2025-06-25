@@ -8,70 +8,66 @@ const botaoReiniciar = document.querySelector(".botao-reiniciar");
 
 const perguntas = [
   {
-    enunciado: "Como a tecnologia impactou o mercado de trabalho?",
+    enunciado: "Como a tecnologia impacta o mercado de trabalho?",
     alternativas: [
-      { texto: "Criou novas oportunidades e profissões.", afirmacao: "A tecnologia ampliou o mercado de trabalho." },
-      { texto: "Eliminou empregos tradicionais.", afirmacao: "A tecnologia trouxe desafios para empregos antigos." }
+      { texto: "Cria novas oportunidades.", afirmacao: "A tecnologia trouxe novas profissões." },
+      { texto: "Elimina empregos antigos.", afirmacao: "Alguns empregos deixaram de existir com a automação." }
     ]
   },
   {
-    enunciado: "Como a tecnologia influencia o meio ambiente?",
+    enunciado: "Como a tecnologia afeta a educação?",
     alternativas: [
-      { texto: "Ajuda a preservar a natureza.", afirmacao: "A tecnologia auxilia na proteção ambiental." },
-      { texto: "Contribui para o consumo e poluição.", afirmacao: "O uso excessivo da tecnologia gera impactos ambientais." }
+      { texto: "Facilita o aprendizado com IA.", afirmacao: "Você valorizou o uso de IA na educação." },
+      { texto: "Pode dificultar se usada sem critério.", afirmacao: "Você demonstrou preocupação com o uso excessivo da tecnologia." }
     ]
-  },
-  // Adicione mais perguntas se quiser
+  }
 ];
 
 let atual = 0;
 let historiaFinal = "";
 
-// Inicia o jogo: oculta tela inicial e mostra perguntas
 botaoIniciar.addEventListener("click", () => {
   telaInicial.classList.add("escondido");
   caixaPrincipal.classList.remove("escondido");
+  iniciarJogo();
+});
+
+function iniciarJogo() {
   atual = 0;
   historiaFinal = "";
   textoResultado.textContent = "";
   botaoReiniciar.style.display = "none";
-  mostraPergunta();
-});
+  mostrarPergunta();
+}
 
-function mostraPergunta() {
+function mostrarPergunta() {
   if (atual >= perguntas.length) {
-    mostraResultado();
+    mostrarResultado();
     return;
   }
-  const perguntaAtual = perguntas[atual];
-  caixaPerguntas.textContent = perguntaAtual.enunciado;
+
+  const pergunta = perguntas[atual];
+  caixaPerguntas.textContent = pergunta.enunciado;
   caixaAlternativas.innerHTML = "";
 
-  perguntaAtual.alternativas.forEach((alt) => {
+  pergunta.alternativas.forEach((alt) => {
     const botao = document.createElement("button");
     botao.textContent = alt.texto;
     botao.classList.add("botao-alternativa");
     botao.addEventListener("click", () => {
       historiaFinal += alt.afirmacao + " ";
       atual++;
-      mostraPergunta();
+      mostrarPergunta();
     });
     caixaAlternativas.appendChild(botao);
   });
 }
 
-function mostraResultado() {
-  caixaPerguntas.textContent = "Resultado final:";
+function mostrarResultado() {
+  caixaPerguntas.textContent = "Em 2049...";
   textoResultado.textContent = historiaFinal.trim();
   caixaAlternativas.innerHTML = "";
   botaoReiniciar.style.display = "inline-block";
 }
 
-botaoReiniciar.addEventListener("click", () => {
-  atual = 0;
-  historiaFinal = "";
-  textoResultado.textContent = "";
-  botaoReiniciar.style.display = "none";
-  mostraPergunta();
-});
-                                
+botaoReiniciar.addEventListener("click", iniciarJogo);
