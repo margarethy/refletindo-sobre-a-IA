@@ -6,6 +6,9 @@ const caixaAlternativas = document.querySelector(".caixa-alternativas");
 const textoResultado = document.querySelector(".texto-resultado");
 const botaoReiniciar = document.querySelector(".botao-reiniciar");
 
+// Som de clique
+const somClique = new Audio("click.mp3");
+
 const perguntas = [
   {
     enunciado: "Como a tecnologia impacta o mercado de trabalho?",
@@ -27,6 +30,7 @@ let atual = 0;
 let historiaFinal = "";
 
 botaoIniciar.addEventListener("click", () => {
+  somClique.play();
   telaInicial.classList.add("escondido");
   caixaPrincipal.classList.remove("escondido");
   iniciarJogo();
@@ -55,6 +59,7 @@ function mostrarPergunta() {
     botao.textContent = alt.texto;
     botao.classList.add("botao-alternativa");
     botao.addEventListener("click", () => {
+      somClique.play();
       historiaFinal += alt.afirmacao + " ";
       atual++;
       mostrarPergunta();
@@ -70,4 +75,7 @@ function mostrarResultado() {
   botaoReiniciar.style.display = "inline-block";
 }
 
-botaoReiniciar.addEventListener("click", iniciarJogo);
+botaoReiniciar.addEventListener("click", () => {
+  somClique.play();
+  iniciarJogo();
+});
