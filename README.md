@@ -1,1 +1,1 @@
-# refletindo-sobre-a-IA
+# tecnologia-e-sociedade
