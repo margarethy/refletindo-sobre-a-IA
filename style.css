@@ -66,12 +66,6 @@ button {
   transform: scale(1.05);
 }
 
-.caixa-perguntas,
-.caixa-alternativas,
-.caixa-resultado {
-  margin-top: 20px;
-}
-
 .botao-alternativa {
   display: block;
   width: 100%;
@@ -93,17 +87,16 @@ button {
 .botao-reiniciar {
   background-color: var(--cor-reiniciar);
   color: white;
-  margin: 10px 5px;
   padding: 12px 24px;
   font-size: 1rem;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
   display: none;
+  transition: background-color 0.3s ease;
 }
 
-.botao-reiniciar.mostrar {
-  display: inline-block;
+.botao-reiniciar:hover {
+  background-color: var(--cor-reiniciar-hover);
 }
 
 .caixa-principal.escondido {
