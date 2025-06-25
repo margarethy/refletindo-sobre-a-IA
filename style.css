@@ -1,21 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap');
 
 :root {
-  --cor-fundo: #0a0a23;
-  --cor-painel: #1e1e3f;
-  --cor-destaque: #00ffe7;
-  --cor-texto: #ffffff;
-  --cor-botao: #00ffe7;
-  --cor-botao-hover: #00c2a8;
-  --cor-reiniciar: #ff5e7d;
-  --cor-reiniciar-hover: #cc4b64;
+  --cor-fundo: #fff5e1;
+  --cor-painel: #ffdab9;
+  --cor-destaque: #ff6f61;
+  --cor-texto: #333333;
+  --cor-botao: #ffb347;
+  --cor-botao-hover: #ff9f1c;
+  --cor-reiniciar: #ff6f61;
+  --cor-reiniciar-hover: #e63946;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Orbitron', sans-serif;
-  background: linear-gradient(135deg, #0a0a23 0%, #1e1e3f 100%);
+  font-family: 'Fredoka', sans-serif;
+  background: linear-gradient(to bottom right, #fff5e1, #ffe6f0);
   color: var(--cor-texto);
   display: flex;
   flex-direction: column;
@@ -30,7 +30,7 @@ body {
   padding: 30px;
   max-width: 600px;
   width: 100%;
-  box-shadow: 0 0 25px rgba(0, 255, 231, 0.3);
+  box-shadow: 0 0 25px rgba(255, 179, 71, 0.3);
   text-align: center;
 }
 
@@ -38,6 +38,7 @@ h1, h2 {
   color: var(--cor-destaque);
   margin-bottom: 20px;
   text-transform: uppercase;
+  text-shadow: 1px 1px #fff;
 }
 
 p {
@@ -46,7 +47,7 @@ p {
 }
 
 button {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Fredoka', sans-serif;
   border: none;
   padding: 12px 24px;
   font-size: 1rem;
@@ -58,7 +59,7 @@ button {
 
 .iniciar-btn {
   background-color: var(--cor-botao);
-  color: #0a0a23;
+  color: #fff;
 }
 
 .iniciar-btn:hover {
@@ -71,7 +72,7 @@ button {
   width: 100%;
   margin: 10px 0;
   background-color: var(--cor-botao);
-  color: #0a0a23;
+  color: #fff;
   padding: 12px;
   font-size: 1rem;
   border-radius: 8px;
@@ -106,7 +107,7 @@ button {
 
 footer {
   margin-top: 40px;
-  color: #888;
+  color: #666;
   font-size: 0.8rem;
   text-align: center;
 }
