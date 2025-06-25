@@ -1,97 +1,133 @@
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
 :root {
-    --cor-fundo: #01080E;
-    --cor-principal: #0B0D20 ;
-    --cor-secundaria: #212333;
-    --cor-destaque: #2BDEFD;
-    --cor-texto: #D7F9FF;
+  --cor-fundo: #0a0a23;
+  --cor-painel: #1e1e3f;
+  --cor-destaque: #00ffe7;
+  --cor-texto: #ffffff;
+  --cor-botao: #00ffe7;
+  --cor-botao-hover: #00c2a8;
+  --cor-reiniciar: #ff5e7d;
+  --cor-reiniciar-hover: #cc4b64;
 }
 
 body {
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    font-family: 'Inter', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(135deg, #0a0a23 0%, #1e1e3f 100%);
+  color: var(--cor-texto);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
 }
 
-.caixa-principal {
-    background-color: var(--cor-principal);
-    width: 90%;
-    max-width: 600px;
-    text-align: center;
-    padding: 20px 24px;
-    border-radius: 18px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.4);
+.tela-inicial, .caixa-principal {
+  background-color: var(--cor-painel);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 0 25px rgba(0, 255, 231, 0.3);
+  text-align: center;
 }
 
-h1, .caixa-perguntas, .caixa-resultado {
-    font-family: 'Chakra Petch', sans-serif;
+h1, h2 {
+  color: var(--cor-destaque);
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
-h1 {
-    color: var(--cor-destaque);
-    margin-bottom: 24px;
-}
-
-.caixa-perguntas {
-    margin-bottom: 20px;
-    font-size: 1.18em;
-}
-
-.caixa-alternativas {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
+p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
 }
 
 button {
-    background-color: var(--cor-secundaria);
-    color: var(--cor-texto);
-    border: none;
-    border-radius: 15px;
-    padding: 15px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    outline: none;
+  font-family: 'Orbitron', sans-serif;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-button:hover,
-button:focus {
-    background-color: var(--cor-destaque);
-    color: var(--cor-principal);
-    outline: 2px solid var(--cor-destaque);
-    outline-offset: 2px;
+.iniciar-btn {
+  background-color: var(--cor-botao);
+  color: #0a0a23;
 }
 
+.iniciar-btn:hover {
+  background-color: var(--cor-botao-hover);
+  transform: scale(1.05);
+}
+
+.caixa-perguntas,
+.caixa-alternativas,
 .caixa-resultado {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.5s;
+  margin-top: 20px;
 }
 
-.caixa-resultado.mostrar {
-    display: block;
-    opacity: 1;
+.botao-alternativa {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  background-color: var(--cor-botao);
+  color: #0a0a23;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.texto-resultado {
-    font-size: 1.15em;
-    margin-bottom: 16px;
+.botao-alternativa:hover {
+  background-color: var(--cor-botao-hover);
+  transform: scale(1.02);
 }
 
-@media (max-width: 400px) {
-    .caixa-principal {
-        padding: 10px 5px;
-        font-size: 0.95em;
-    }
-    h1 {
-        font-size: 1.27em;
-    }
+.botao-reiniciar {
+  background-color: var(--cor-reiniciar);
+  color: white;
+  margin: 10px 5px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: none;
+}
+
+.botao-reiniciar.mostrar {
+  display: inline-block;
+}
+
+.caixa-principal.escondido {
+  display: none;
+}
+
+footer {
+  margin-top: 40px;
+  color: #888;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .tela-inicial, .caixa-principal {
+    padding: 20px;
+  }
+
+  h1, h2 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 10px 18px;
+  }
 }
