@@ -99,7 +99,8 @@ button {
   background-color: var(--cor-reiniciar-hover);
 }
 
-.caixa-principal.escondido {
+.caixa-principal.escondido,
+.tela-inicial.escondido {
   display: none;
 }
 
